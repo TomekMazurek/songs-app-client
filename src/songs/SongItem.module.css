@@ -1,0 +1,64 @@
+li {
+    margin: 0.5rem 0;
+}
+
+.topStripe {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(248, 4, 4, 0.55);
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+    height: 3rem;
+    padding-left: 1rem;
+}
+
+.topStripe h1 {
+    font-size: 2rem;
+}
+.title{
+    margin-left: 0;
+    margin-right:1.5rem;
+}
+
+.description {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 0.5rem;
+}
+
+.info {
+    display: flex;
+    flex-flow: row;
+    margin-inside: 2rem;
+}
+
+.info p {
+    padding-left: 1.5rem;
+}
+
+
+.text {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+}
+
+.actions {
+    display: flex;
+    padding-right: 0.5rem;
+}
+
+.actions button {
+    background-image: linear-gradient(to right, rgba(238, 234, 234, 0.82), rgba(132, 126, 126, 0.82));
+    border-radius: 8px;
+    height: 2.5rem;
+    font-size: 1.5rem;
+    color: #2c292b;
+}
+@media only screen and (max-width: 1000px) {
+.topStripe h1{
+    font-size: 1rem;
+}
+}

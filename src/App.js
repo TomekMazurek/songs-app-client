@@ -1,24 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import {useEffect} from "react";
+import {useDispatch} from "react-redux";
+import {Route, Switch} from "react-router-dom";
+import Layout from "./layout/Layout"
+import AllSongsPage from "./pages/AllSongsPage";
+import NewSongPage from "./pages/NewSongPage";
+import ReportsPage from "./pages/ReportsPage";
+import {fetchCategories} from "./store/songs-actions";
 
 function App() {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(fetchCategories());
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Layout>
+      <Switch>
+        <Route path='/' exact><AllSongsPage/></Route>
+        <Route path='/newSong'><NewSongPage/></Route>
+        <Route path='/reports'><ReportsPage/></Route>
+      </Switch>
+    </Layout>
   );
 }
 

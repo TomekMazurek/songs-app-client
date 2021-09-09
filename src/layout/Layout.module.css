@@ -1,0 +1,19 @@
+.main {
+    alignment: center;
+    margin-top: 8rem;
+    width: 95vw;
+    text-align: center;
+}
+h1{
+    font-size: 2rem;
+}
+
+@media only screen and (max-width: 900px) {
+    .main {
+        margin-top: 8rem;
+    }
+
+    h1 {
+        font-size: 1rem;
+    }
+}

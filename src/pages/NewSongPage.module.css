@@ -1,0 +1,12 @@
+.main {
+    display: flex;
+    flex-flow: column;
+    margin-top: 5rem;
+    background-color: inherit;
+    align-items: center;
+}
+
+button{
+    width: 8rem;
+    height: 2rem;
+}
