@@ -1,8 +1,10 @@
 import {useRef} from "react";
 import {useDispatch, useSelector} from "react-redux";
+import {useHistory} from "react-router-dom";
 import {addNewSong} from "../store/songs-actions";
 
 function AddSongForm() {
+  const history= useHistory();
   const categories = useSelector(state => state.songs.categories);
   const dispatch = useDispatch();
   console.log('categories');
@@ -24,8 +26,8 @@ function AddSongForm() {
       category: formData.genreRef.current.value,
       votes: parseInt(formData.votesRef.current.value)
     }
-    console.log(newSongData);
     dispatch(addNewSong(newSongData));
+    history.replace('/reports')
   }
 
   return (
