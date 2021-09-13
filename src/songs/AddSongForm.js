@@ -14,7 +14,6 @@ function AddSongForm() {
     authorRef: useRef(),
     albumRef: useRef(),
     genreRef: useRef(),
-    votesRef: useRef()
   };
 
   function addSongHandler(event) {
@@ -24,7 +23,7 @@ function AddSongForm() {
       author: formData.authorRef.current.value,
       album: formData.albumRef.current.value,
       category: formData.genreRef.current.value,
-      votes: parseInt(formData.votesRef.current.value)
+      votes: 0
     }
     dispatch(addNewSong(newSongData));
     history.replace('/reports')
@@ -53,10 +52,6 @@ function AddSongForm() {
               <option value={category.category}>{category.category}</option>
             ))}
           </select>
-        </div>
-        <div>
-          <label htmlFor='votes'>Initial Votes:</label>
-          <input type='text' id='votes' ref={formData.votesRef}/>
         </div>
         <div>
           <button type='submit'>Add</button>
