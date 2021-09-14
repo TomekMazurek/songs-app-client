@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Allison&display=swap');
+
 .header {
     overflow: hidden;
     position: fixed;
@@ -16,9 +18,10 @@
 }
 
 .logo {
+    font-family: 'Allison', cursive;
     font-weight: bold;
-    color: rgba(245, 245, 245, 0.65);
-    font-size: 1.5rem;
+    color: rgb(245, 245, 245);
+    font-size: 3rem;
 }
 
 .header nav {
@@ -30,6 +33,7 @@
     display: flex;
     flex-flow: row;
     list-style: none;
+    padding: 1.4rem;
 }
 
 .header li {
@@ -41,7 +45,11 @@ a {
     text-decoration: none;
 }
 
-a:hover, a:active, a:visited {
+a:hover {
+    color: beige;
+}
+
+a:active, a:visited {
     color: whitesmoke;
 }
 

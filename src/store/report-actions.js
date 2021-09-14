@@ -48,13 +48,13 @@ export const fetchData = () => {
         break;
       }
     }
-
+let data;
     await api.get(requestConfig.url, requestConfig.config)
       .then(res => {
-        console.log(res);
-        dispatch(reportActions.updateSongs(res.data));
+        data =res.data;
       })
       .catch(error => console.log(error));
+    dispatch(reportActions.updateSongs(data));
   }
 }
 

@@ -6,7 +6,15 @@
     align-items: center;
 }
 
-button{
-    width: 8rem;
-    height: 2rem;
+.form {
+    padding: 1rem;
+}
+
+@media all and (max-width: 1120px) {
+    .main {
+        max-width: 100vh;
+    }
+    .form{
+        padding: 0.5rem;
+    }
 }
