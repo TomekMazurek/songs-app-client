@@ -7,6 +7,7 @@ import Modal from "../ui/Modal";
 
 const ReportsPage = () => {
   const reportType = useSelector(state => state.reports.type);
+  const allSongs= useSelector(state=> state.songs.songs);
   const songs = useSelector(state => state.reports.songs);
   const activeCategory =useSelector(state=>state.reports.category);
   const categories = useSelector(state => state.songs.categories);
@@ -28,7 +29,7 @@ const ReportsPage = () => {
 
   useEffect(() => {
     dispatch(fetchData());
-  }, [reportType,activeCategory]);
+  }, [dispatch,reportType, allSongs,activeCategory]);
 
   return (
     <Fragment>

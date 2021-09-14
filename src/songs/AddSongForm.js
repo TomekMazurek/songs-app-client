@@ -2,9 +2,10 @@ import {useRef} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {useHistory} from "react-router-dom";
 import {addNewSong} from "../store/songs-actions";
+import classes from "./AddSongForm.module.css";
 
 function AddSongForm() {
-  const history= useHistory();
+  const history = useHistory();
   const categories = useSelector(state => state.songs.categories);
   const dispatch = useDispatch();
   console.log('categories');
@@ -14,7 +15,6 @@ function AddSongForm() {
     authorRef: useRef(),
     albumRef: useRef(),
     genreRef: useRef(),
-    votesRef: useRef()
   };
 
   function addSongHandler(event) {
@@ -24,41 +24,39 @@ function AddSongForm() {
       author: formData.authorRef.current.value,
       album: formData.albumRef.current.value,
       category: formData.genreRef.current.value,
-      votes: parseInt(formData.votesRef.current.value)
+      votes: 0
     }
     dispatch(addNewSong(newSongData));
     history.replace('/reports')
   }
 
   return (
-    <div>
+    <div className={classes.main}>
       <h1>Add new Song</h1>
-      <form onSubmit={addSongHandler}>
-        <div>
-          <label htmlFor='title'>Title:</label>
-          <input type='text' required id='title' ref={formData.titleRef}/>
+      <form onSubmit={addSongHandler} className={classes.form}>
+        <div className={classes.elements}>
+          <div className={classes.element}>
+            <label htmlFor='title'>Title:</label>
+            <input type='text' required id='title' ref={formData.titleRef}/>
+          </div>
+          <div className={classes.element}>
+            <label htmlFor='author'>Author:</label>
+            <input type='text' required id='author' ref={formData.authorRef}/>
+          </div>
+          <div className={classes.element}>
+            <label htmlFor='album'>Album:</label>
+            <input type='text' required id='album' ref={formData.albumRef}/>
+          </div>
+          <div className={classes.element}>
+            <label htmlFor='category'>Category:</label>
+            <select id='votes' ref={formData.genreRef}>
+              {categories.map(category => (
+                <option value={category.category}>{category.category}</option>
+              ))}
+            </select>
+          </div>
         </div>
-        <div>
-          <label htmlFor='author'>Author:</label>
-          <input type='text' required id='author' ref={formData.authorRef}/>
-        </div>
-        <div>
-          <label htmlFor='album'>Album:</label>
-          <input type='text' required id='album' ref={formData.albumRef}/>
-        </div>
-        <div>
-          <label htmlFor='category'>Category:</label>
-          <select id='votes' ref={formData.genreRef}>
-            {categories.map(category => (
-              <option value={category.category}>{category.category}</option>
-            ))}
-          </select>
-        </div>
-        <div>
-          <label htmlFor='votes'>Initial Votes:</label>
-          <input type='text' id='votes' ref={formData.votesRef}/>
-        </div>
-        <div>
+        <div className={classes.actions}>
           <button type='submit'>Add</button>
         </div>
       </form>

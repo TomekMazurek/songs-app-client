@@ -4,7 +4,7 @@ const songSlice = createSlice({
     name: "songsSlice",
     initialState: {
       songs: [],
-      categories: []
+      categories: [],
     },
     reducers: {
       addNewSong(state, action) {

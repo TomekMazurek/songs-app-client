@@ -20,7 +20,7 @@ export const voteForSong = (id) => {
     await api.put('/votes/' + id).then(res => {
       dispatch(songsActions.voteForSong(res.data));
     }).catch(error => {
-      console.log(error)
+      console.log(error);
     });
   }
 }

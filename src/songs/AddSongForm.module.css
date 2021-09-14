@@ -1,0 +1,45 @@
+.main {
+    font-size: 2rem;
+    display: flex;
+    flex-flow: column;
+}
+
+.form {
+    display: flex;
+    flex-flow: column;
+}
+
+.elements {
+    display: flex;
+    flex-flow: row;
+    max-width: 1220px;
+    min-width: 600px;
+}
+
+.element {
+    display: flex;
+    flex-flow: row;
+}
+
+.actions {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+}
+
+.actions button {
+    display: block;
+    alignment: center;
+    width: 3rem;
+    max-height: 2rem;
+}
+
+@media all and (max-width: 900px) {
+    .main {
+        font-size: 1rem;
+    }
+    .elements{
+        flex-flow: column;
+        align-items: center;
+    }
+}
