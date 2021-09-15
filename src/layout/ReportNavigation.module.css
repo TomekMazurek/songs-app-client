@@ -1,0 +1,13 @@
+.navbar {
+    display: flex;
+    flex-flow: column;
+    width: 60%;
+    align-items: center;
+    justify-content: center;
+}
+
+@media all and (min-width: 1000px) {
+    .navbar {
+        flex-flow: row;
+    }
+}

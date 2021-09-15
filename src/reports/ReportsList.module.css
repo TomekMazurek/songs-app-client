@@ -1,0 +1,32 @@
+.list{
+    display: flex;
+    width: 90vw;
+}
+
+.list ul {
+    width: 100%;
+    list-style: none;
+    display: flex;
+    flex-flow: column;
+    align-items: stretch;
+}
+
+.item {
+    margin: 5px 0;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.songItem {
+    margin-left: 0.5rem ;
+    width: 90%;
+}
+
+.index {
+    display: flex;
+    width: 10%;
+    align-items: center;
+    justify-content: center;
+}

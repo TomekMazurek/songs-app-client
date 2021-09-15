@@ -1,12 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Glory:wght@500&display=swap');
+
 .main {
-    font-size: 2rem;
+    font-family: 'Glory', sans-serif;
+    font-size: 1.5rem;
     display: flex;
     flex-flow: column;
+    width: 80vw;
 }
 
 .form {
     display: flex;
     flex-flow: column;
+    align-items: center;
 }
 
 .elements {
@@ -17,19 +22,23 @@
 }
 
 .element {
+    margin-left: 1rem;
     display: flex;
     flex-flow: row;
 }
 
 .actions {
+    margin-top: 0.5rem;
     display: flex;
     flex-flow: column;
     justify-content: center;
 }
 
 .actions button {
-    display: block;
-    alignment: center;
+
+    display: flex;
+    align-items: center;
+    justify-content:center;
     width: 3rem;
     max-height: 2rem;
 }
@@ -38,7 +47,8 @@
     .main {
         font-size: 1rem;
     }
-    .elements{
+
+    .elements {
         flex-flow: column;
         align-items: center;
     }

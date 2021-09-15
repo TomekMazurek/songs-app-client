@@ -1,3 +1,14 @@
-.list ul{
+.list{
+    display: flex;
+    width: 90vw;
+}
+.list ul {
+    width: 100%;
     list-style: none;
+    display: flex;
+    flex-flow: column;
+    align-items: stretch;
+}
+.list li{
+    margin: 0.5rem 0;
 }

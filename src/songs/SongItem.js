@@ -13,28 +13,26 @@ function SongItem(props) {
   }
 
   return (
-    <li>
-      <Card>
-        <div className={classes.topStripe}>
-          <div className={classes.text}>
-            <span className={classes.title}><h1>{props.title}</h1></span>
-            <span className={classes.author}><h1> ({props.author})</h1></span>
-          </div>
-          <div className={classes.actions}>
-            <button className={buttonClassName}
-                    onClick={addVoteHandler}>Vote
-            </button>
-          </div>
+    <Card className={props.className ? props.className : ''}>
+      <div className={classes.topStripe}>
+        <div className={classes.text}>
+          <span className={classes.title}><h1>{props.title}</h1></span>
+          <span className={classes.author}><h1> ({props.author})</h1></span>
         </div>
-        <div className={classes.description}>
-          <div className={classes.info}>
-            <p>Album: {props.album}</p>
-            <p>Category: {props.category}</p>
-          </div>
-          <p>Votes: {props.votes}</p>
+        <div className={classes.actions}>
+          <button className={buttonClassName}
+                  onClick={addVoteHandler}>Vote
+          </button>
         </div>
-      </Card>
-    </li>
+      </div>
+      <div className={classes.description}>
+        <div className={classes.info}>
+          <p>Album: {props.album}</p>
+          <p>Category: {props.category}</p>
+        </div>
+        <p>Votes: {props.votes}</p>
+      </div>
+    </Card>
   );
 }
 

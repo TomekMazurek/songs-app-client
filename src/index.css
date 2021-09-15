@@ -1,7 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Glory:wght@500&family=Nunito:ital,wght@1,700&display=swap');
 
 * {
     box-sizing: border-box;
+}
+body{
+    display: flex;
+}
+div{
+    display: flex;
+    flex-flow: column;
 }
 button{
     display:inline-block;
@@ -11,12 +19,13 @@ button{
     border-radius:0.12em;
     box-sizing: border-box;
     text-decoration:none;
-    font-family:'Roboto',sans-serif;
+    font-family: 'Nunito', sans-serif;
     font-weight:400;
     text-align:center;
     transition: all 0.2s;
 }
 button:hover{
+    cursor: pointer;
     color:#000000;
     background-color:#FFFFFF;
 }

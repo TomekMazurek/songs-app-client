@@ -1,5 +1,7 @@
 import {useDispatch} from "react-redux";
-import {setReportType} from "../store/report-actions";
+import {fetchData, setReportType} from "../store/report-actions";
+import Card from "../ui/Card";
+import classes from "./ReportNavigation.module.css";
 
 const ReportNavigation = (props) => {
   const dispatch = useDispatch();
@@ -13,17 +15,21 @@ const ReportNavigation = (props) => {
   const allHandler = () => {
     dispatch(setReportType('all'));
   }
-  const categoryHandler=()=>{
+  const categoryHandler = () => {
     props.onShowCategory();
+  }
+  const refreshHandler = () => {
+    dispatch(fetchData());
   }
 
   return (
-    <nav>
+    <Card className={classes.navbar}>
+      <button onClick={refreshHandler}>refresh</button>
       <button onClick={allHandler}> All Songs</button>
       <button onClick={topTenHandler}> Top Ten</button>
       <button onClick={topThreeHandler}> Top Three</button>
       <button onClick={categoryHandler}> Category Report</button>
-    </nav>
+    </Card>
   );
 }
 

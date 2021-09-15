@@ -14,23 +14,26 @@ function AllSongsPage() {
     dispatch(getSongs());
   }, [dispatch]);
 
+  const refreshHandler = () => {
+    dispatch(getSongs());
+  }
+
   const showListHandler = () => {
     dispatch(toggleSongsList());
   }
   return (
-    <div>
-      {!showSongsList && <Card>
-        <section className={classes.description}>
+    <Fragment>
+      {!showSongsList && <Card className={classes.description}>
           <h1>Hello there!</h1>
           <p>Let's vote on our favourite songs!</p>
           <p> Do you like listening to music? Do you have a song that gives you thrills? Go ahead and vote on it!</p>
           <p>Share with others about what do you like to hear, let's check which one is most popular</p>
           <p>You didn't find what you like? Add it to the list.</p>
-        </section>
       </Card>}
-      <Card>
+      <Card className={classes.list}>
         {!showSongsList && <button onClick={showListHandler}>Display songs</button>}
         {showSongsList && <Fragment>
+          <button onClick={refreshHandler} className={classes.button}>refresh</button>
           <h1>Songs</h1>
           {
             loadedSongs.length !== 0 && <SongList songs={loadedSongs}/>
@@ -40,7 +43,7 @@ function AllSongsPage() {
           }
         </Fragment>}
       </Card>
-    </div>
+    </Fragment>
   );
 }
 

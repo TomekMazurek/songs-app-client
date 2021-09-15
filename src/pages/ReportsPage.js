@@ -1,15 +1,15 @@
 import {Fragment, useEffect, useRef, useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import ReportNavigation from "../layout/ReportNavigation";
-import SongList from "../songs/SongList";
+import ReportsList from "../reports/ReportsList";
 import {fetchData, setCategory, setReportType} from "../store/report-actions";
 import Modal from "../ui/Modal";
 
 const ReportsPage = () => {
   const reportType = useSelector(state => state.reports.type);
-  const allSongs= useSelector(state=> state.songs.songs);
+  const allSongs = useSelector(state => state.songs.songs);
   const songs = useSelector(state => state.reports.songs);
-  const activeCategory =useSelector(state=>state.reports.category);
+  const activeCategory = useSelector(state => state.reports.category);
   const categories = useSelector(state => state.songs.categories);
   const dispatch = useDispatch();
   const [showCategories, setShowCategories] = useState(false);
@@ -29,7 +29,7 @@ const ReportsPage = () => {
 
   useEffect(() => {
     dispatch(fetchData());
-  }, [dispatch,reportType, allSongs,activeCategory]);
+  }, [dispatch, reportType, allSongs, activeCategory]);
 
   return (
     <Fragment>
@@ -43,7 +43,8 @@ const ReportsPage = () => {
           <button onClick={showCategoryReportHandler}>Ok</button>
         </div>
       </Modal>}
-      <SongList songs={songs}/>
+
+      <ReportsList songs={songs}/>
     </Fragment>
   );
 }
