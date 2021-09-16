@@ -2,7 +2,7 @@
 
 .main {
     font-family: 'Glory', sans-serif;
-    font-size: 1.5rem;
+    font-size: 1rem;
     display: flex;
     flex-flow: column;
     width: 80vw;
@@ -19,6 +19,7 @@
     flex-flow: row;
     max-width: 1220px;
     min-width: 600px;
+    align-items: center;
 }
 
 .element {
@@ -43,13 +44,16 @@
     max-height: 2rem;
 }
 
-@media all and (max-width: 900px) {
-    .main {
-        font-size: 1rem;
-    }
-
+@media all and (max-width: 1345px) {
+.main{
+    font-size: 1.5rem;
+}
     .elements {
         flex-flow: column;
         align-items: center;
+
+    }
+    .element{
+        margin-bottom: 0.3rem;
     }
 }

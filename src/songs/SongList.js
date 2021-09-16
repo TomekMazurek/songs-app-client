@@ -2,6 +2,7 @@ import SongItem from "./SongItem";
 import classes from "./SongList.module.css"
 
 function SongList(props) {
+  console.log(props.songs);
   return (
     <div className={classes.list}>
       <ul>
@@ -14,6 +15,7 @@ function SongList(props) {
               album={song.album}
               category={song.category}
               votes={song.votes}
+              youtubeId={song.youtubeId}
             />
           </li>
         ))}

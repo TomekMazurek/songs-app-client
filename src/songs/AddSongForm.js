@@ -15,6 +15,7 @@ function AddSongForm() {
     authorRef: useRef(),
     albumRef: useRef(),
     genreRef: useRef(),
+    youtubeIdRef:useRef(),
   };
 
   function addSongHandler(event) {
@@ -24,7 +25,8 @@ function AddSongForm() {
       author: formData.authorRef.current.value,
       album: formData.albumRef.current.value,
       category: formData.genreRef.current.value,
-      votes: 0
+      votes: 0,
+      youtubeId: formData.youtubeIdRef.current.value
     }
     dispatch(addNewSong(newSongData));
     history.replace('/reports')
@@ -37,7 +39,7 @@ function AddSongForm() {
         <div className={classes.elements}>
           <div className={classes.element}>
             <label htmlFor='title'>Title:</label>
-            <input type='text' required id='title' ref={formData.titleRef}/>
+            <input type='text' required id='title' ref={formData.titleRef} placeholder="sfs"/>
           </div>
           <div className={classes.element}>
             <label htmlFor='author'>Author:</label>
@@ -54,6 +56,10 @@ function AddSongForm() {
                 <option value={category.category}>{category.category}</option>
               ))}
             </select>
+          </div>
+          <div className={classes.element}>
+            <label htmlFor='youtubeId'>YouTube Id:</label>
+            <input type='text' id='youtubeId' ref={formData.youtubeIdRef}/>
           </div>
         </div>
         <div className={classes.actions}>
