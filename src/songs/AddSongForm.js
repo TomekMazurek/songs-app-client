@@ -39,7 +39,7 @@ function AddSongForm() {
         <div className={classes.elements}>
           <div className={classes.element}>
             <label htmlFor='title'>Title:</label>
-            <input type='text' required id='title' ref={formData.titleRef} placeholder="sfs"/>
+            <input type='text' required id='title' ref={formData.titleRef} />
           </div>
           <div className={classes.element}>
             <label htmlFor='author'>Author:</label>
