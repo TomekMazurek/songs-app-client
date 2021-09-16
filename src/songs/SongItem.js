@@ -1,17 +1,26 @@
 import {useDispatch} from "react-redux";
 import {voteForSong} from "../store/songs-actions";
+import {setPlayVideo, setSongToDisplay} from "../store/ui-actions";
 import Card from "../ui/Card";
 import classes from "./SongItem.module.css"
 
-function SongItem(props) {
+const SongItem = (props) => {
   const dispatch = useDispatch();
   let buttonClassName = '';
+  const youtubeId= props.youtubeId;
 
-  function addVoteHandler() {
+  const addVoteHandler = () => {
     dispatch(voteForSong(props.id));
     buttonClassName = 'classes.vote_processing';
   }
-
+  const viewVideoHandler = () => {
+    dispatch(setSongToDisplay({
+      title: props.title,
+      youtubeId: props.youtubeId
+    }));
+    dispatch(setPlayVideo(true));
+  }
+console.log(props);
   return (
     <Card className={props.className ? props.className : ''}>
       <div className={classes.topStripe}>
@@ -20,6 +29,9 @@ function SongItem(props) {
           <span className={classes.author}><h1> ({props.author})</h1></span>
         </div>
         <div className={classes.actions}>
+          {typeof youtubeId==='string' && youtubeId.trim().length!==0 && <button
+                  onClick={viewVideoHandler}>Listen
+          </button>}
           <button className={buttonClassName}
                   onClick={addVoteHandler}>Vote
           </button>

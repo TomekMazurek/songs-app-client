@@ -1,3 +1,7 @@
+.youtubeModal{
+    width: 900px;
+    height: 500px;
+}
 
 .topStripe {
     display: flex;
@@ -49,10 +53,8 @@
 .actions {
     margin: 0;
     padding: 0;
-
-    /*align-content: stretch;*/
-    /*justify-content: stretch;*/
-    /*align-items: baseline;*/
+    display: flex;
+    flex-flow: row;
 }
 
 .actions button {
@@ -62,6 +64,11 @@
     color: #2c292b;
     height: 100%;
     transition-duration: 1s;
+}
+
+
+.actions .inactive{
+    background-image: linear-gradient(to right, rgba(238, 234, 234, 0.33), rgba(132, 126, 126, 0.4));
 }
 
 .actions button:hover {
