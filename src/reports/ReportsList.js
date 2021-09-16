@@ -10,12 +10,13 @@ const ReportsList = (props) => {
           <li className={classes.item} key={song.id}>
             <Card className={classes.index}><h1>{index + 1}</h1></Card>
             <SongItem className={classes.songItem}
-              id={song.id}
-              title={song.title}
-              author={song.author}
-              album={song.album}
-              category={song.category}
-              votes={song.votes}
+                      id={song.id}
+                      title={song.title}
+                      author={song.author}
+                      album={song.album}
+                      category={song.category}
+                      votes={song.votes}
+                      youtubeId={song.youtubeId}
             />
           </li>
         ))}
